@@ -1,0 +1,7 @@
+<h1>Click an Artist to see Songs</h1>
+<%= link_to 'Create a new Artist', new_billboard_artist_path %>
+<ul>
+  <% @billboard.artists.each do |artist| %>
+    <li><%= link_to artist.name, [@billboard, artist] %></li>
+  <% end %>
+</ul>
