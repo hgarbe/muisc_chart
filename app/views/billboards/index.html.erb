@@ -1,7 +1,30 @@
-<h1 Welcome to Billboards></h1>
-<%= link_to "Create a new Billboard", new_billboard_path %>
-<ul>
-  <% @billboards.each do |billboard| %>
-    <li><%= link_to billboard.name, billboard%></li>
-  <% end %>
-<ul>    
+<br>
+<br>
+<h1> Wellcome to Billboard Music Charts </h1>
+<div class="center-align">
+  <div class="hoverable">
+  </div>
+</div>
+<br>
+    <% @billboards.each do |billboard| %>
+      <div class="center-align">
+      <div class="card-panel hoverable">
+      <h6>Name: </h6>
+      <h5><%= link_to billboard.name, billboard_path(billboard) %></h5>
+      </div>
+      </div>
+      <br>
+      <br>
+      <div class="div-container">
+      <%= link_to "New Billboard", new_billboard_path, class: "ui button blue" %>
+      <%= link_to 'All Artists', artists_path, class: 'ui button orange' %>
+      <%= link_to "Edit this Billboard", edit_billboard_path(billboard), class: "ui button yellow" %>
+      <%= link_to "Delete this Billboard", billboard_path(billboard), method: :delete, class: "ui button green", data: { confirm: 'Are you sure?' } %>
+      </div>
+
+<% end %>
+
+
+
+
+  

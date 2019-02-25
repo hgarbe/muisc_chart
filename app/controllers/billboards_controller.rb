@@ -19,7 +19,6 @@ class BillboardsController < ApplicationController
 
   def create
     @billboard = Billboard.new(billboard_params)
-
     if @billboard.save 
       redirect_to billboards_path
     else
@@ -36,6 +35,7 @@ class BillboardsController < ApplicationController
   end
   
   def destroy
+    # @billboard.songs.update_all(billboard_id: nil)
     @billboard.destroy
     redirect_to billboards_path
   end

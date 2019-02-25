@@ -1,7 +1,34 @@
 <h1>Song Library</h1>
-<%= link_to 'Add a new song', new_artist_song_path %>
 <ul>
   <% @artist.songs.each do |song| %>
+  </br>
     <li><%= link_to song.name, [@artist, song] %></li>
   <% end %>
 </ul>
+
+<div class="center-align">
+  <div class="hoverable">
+  </div>
+</div>
+<div class="div-container">
+<%= link_to "New Song", new_artist_song_path(@artist), class: "ui button green" %>
+<%= link_to "Back to Artists", artists_path, class: "ui button yellow blue" %>
+</div>
+<br>
+<br>
+<% @songs.each do |song| %>
+  <div class="center-align">
+    <div class="card-panel hoverable">
+      <h6><%= link_to song.name, artist_song_path(@artist, song) %></h6>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="div-container">
+  <%= link_to "Delete this Song", artist_song_path(@artist, song), method: :delete, class: "ui button red" %>
+  <%= link_to "Edit this Song", edit_artist_song_path(@artist, song), class: "ui button purple" %>
+  </div>
+
+
+
+  <% end %>

@@ -1,6 +1,11 @@
-<h1><%= @billboard.name %> - <%= @artist.name %></h1>
-<p><%= @artist.name %></p>
-<%= link_to 'View Songs', artist_songs_path(@artist) %>
-<%= link_to 'Edit Artist', edit_billboard_artist_path(@artist) %>
-<%= link_to 'Delete Artist', [@billboard, @artist], method: :delete %>
-<%= link_to 'Back To Artists', billboard_artists_path(@billboard) %>
+
+
+  <div class="hoverable">
+    <div class="center-align">
+      <br>
+      <br>
+      <%= link_to 'View Songs', artist_songs_path(@artist), class: "ui button purple" %> 
+      <%= link_to 'Back', artists_path, class: "ui button blue" %>
+    </div>
+  </div>
+

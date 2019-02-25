@@ -1,2 +1,16 @@
-<h1>Songs#show</h1>
-<p>Find me in app/views/songs/show.html.erb</p>
+<div class="center-align">
+  <div class="hoverable">
+    <h1>
+      <strong>Name:</strong>
+      <%= @song.name %>
+    </h1>
+      <h1 class="ui header">Song Library</h1>
+    </div>  
+  </div>
+</div>
+
+<div class="center-align">
+  <%= link_to 'Edit', edit_artist_song_path(@artist, @song) %> |
+  <%= link_to 'Back', artist_songs_path(@artist) %>
+  <%= link_to 'Destroy', @artists, method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>

@@ -1,8 +1,15 @@
-<h1><%= @billboard.name %>
-</hr>
-<p> What would you like to do?</p>
-<%= link_to 'View Billboard', billboard_artists_path(@billboard) %>
-<br />
-<%= link_to 'Edit Billboard', edit_billboard_path(@billboard) %>
-<br />
-<%= link_to 'Delete Billboard', @billboard, method: :delete %>
+
+
+<div class="center-align">
+  <div class="hoverable">
+    <h1><%= @billboard.name %></h1>
+    <p> What would you like to do?</p>
+      <%= link_to 'View Artists', billboard_artists_path(@billboard) %>
+      <br />
+      <%= link_to 'Edit Billboard', edit_billboard_path(@billboard) %>
+      <br />
+      <%= link_to 'Delete Billboard', @billboard, method: :delete %>
+  </div>
+</div>
+
+<% end %>

@@ -1,2 +1,18 @@
-<h1>Billboards#new</h1>
-<p>Find me in app/views/billboards/new.html.erb</p>
+
+<div class="center-align">
+  <div class="hoverable">
+  </div>
+</div>
+<%= form_with(model: @billboard, local: true, class: "form") do |f| %> 
+  <div class="input">
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true, placeholder: "Name" %>
+  </div>
+  <div class="div-container" >
+  <div class="button">
+        <%= f.button class: "ui button orange" %>
+        </div>
+        <%= link_to "Back to Billboards", billboards_path, class: "ui button red" %>
+</div>
+</div>
+  <% end %>

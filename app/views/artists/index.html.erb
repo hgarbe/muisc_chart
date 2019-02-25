@@ -1,7 +1,29 @@
-<h1>Click an Artist to see Songs</h1>
-<%= link_to 'Create a new Artist', new_billboard_artist_path %>
-<ul>
-  <% @billboard.artists.each do |artist| %>
-    <li><%= link_to artist.name, [@billboard, artist] %></li>
+<br>
+<br>
+<div class="center-align">
+  <div class="hoverable">
+    <h1>Click on Artist to view song library</h1>
+  </div>
+</div>
+<br>
+<br>
+<div class="div-container">
+<%= link_to "New Artist", new_artist_path, class: "ui button blue" %>
+<%= link_to "Back to Billboards", billboards_path, class: "ui button blue" %>
+</div>
+<br>
+<br>
+<% @artists.each do |artist| %>
+  <div class="center-align">
+    <div class="card-panel hoverable">
+      <h6><%= link_to artist.name, artist_path(artist) %></h6>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="div-container">
+  <%= link_to "Delete this Artist", artist, method: :delete, class: "ui button yellow" %>
+  <%= link_to "Edit this Artist", edit_artist_path(artist), class: "ui button red" %>
+  </div>
+
   <% end %>
-</ul>
