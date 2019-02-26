@@ -42,7 +42,7 @@ class ArtistsController < ApplicationController
     @artist.destroy
     redirect_to artists_url
   end
- 
+  
   private
 
   # def set_billboard

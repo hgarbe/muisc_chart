@@ -4,12 +4,14 @@
   <div class="hoverable">
     <h1><%= @billboard.name %></h1>
     <p> What would you like to do?</p>
-      <%= link_to 'View Artists', billboard_artists_path(@billboard) %>
-      <br />
-      <%= link_to 'Edit Billboard', edit_billboard_path(@billboard) %>
-      <br />
-      <%= link_to 'Delete Billboard', @billboard, method: :delete %>
+      <br>
+      <div class="div-container">
+      <%= link_to "New Billboard", new_billboard_path, class: "ui button blue" %>
+      <%= link_to 'All Artists', artists_path, class: 'ui button orange' %>
+      <%= link_to "Edit this Billboard", edit_billboard_path(@billboard), class: "ui button yellow" %>
+      <%= link_to "Delete this Billboard", billboard_path(@billboard), method: :delete, class: "ui button green", data: { confirm: 'Are you sure?' } %>
+      </div>
   </div>
 </div>
 
-<% end %>
+

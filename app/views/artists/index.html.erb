@@ -9,21 +9,21 @@
 <br>
 <div class="div-container">
 <%= link_to "New Artist", new_artist_path, class: "ui button blue" %>
-<%= link_to "Back to Billboards", billboards_path, class: "ui button blue" %>
+<%= link_to "Back to Billboards", billboards_path, class: "ui button green" %>
 </div>
 <br>
 <br>
 <% @artists.each do |artist| %>
   <div class="center-align">
     <div class="card-panel hoverable">
-      <h6><%= link_to artist.name, artist_path(artist) %></h6>
+      <h1><%= link_to artist.name, artist_path(artist) %></h1>
     </div>
   </div>
   <br>
   <br>
   <div class="div-container">
-  <%= link_to "Delete this Artist", artist, method: :delete, class: "ui button yellow" %>
-  <%= link_to "Edit this Artist", edit_artist_path(artist), class: "ui button red" %>
+  <%= link_to "Delete this Artist", artist, method: :delete, class: "ui button red" %>
+  <%= link_to "Edit this Artist", edit_artist_path(artist), class: "ui button yellow" %>
   </div>
 
   <% end %>

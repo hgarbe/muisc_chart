@@ -1,8 +1,6 @@
 <h1>Song Library</h1>
 <ul>
   <% @artist.songs.each do |song| %>
-  </br>
-    <li><%= link_to song.name, [@artist, song] %></li>
   <% end %>
 </ul>
 
@@ -19,7 +17,7 @@
 <% @songs.each do |song| %>
   <div class="center-align">
     <div class="card-panel hoverable">
-      <h6><%= link_to song.name, artist_song_path(@artist, song) %></h6>
+      <h1><%= link_to song.name, artist_song_path(@artist, song) %></h1>
     </div>
   </div>
   <br>
